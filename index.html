@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Biagiopoli · Stato sovrano tecnologico</title>
+  <meta name="description" content="Biagiopoli, la repubblica tecnologica fondata da Biagio I Scaglia. Esplora in 3D i palazzi di Neo-Biagiopoli, la Costituzione del 2026 e il governo della Repubblica." />
+  <meta name="author" content="Biagio Scaglia" />
+  <meta name="theme-color" content="#05070c" />
+  <meta property="og:title" content="Biagiopoli · Stato sovrano tecnologico" />
+  <meta property="og:description" content="Scienza · Libertà · Futuro. I palazzi di Neo-Biagiopoli in 3D." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="seal" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="32" cy="32" r="24.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".55" />
+      <path d="M21 25 L23.5 16 L28 21.5 L32 13 L36 21.5 L40.5 16 L43 25 Z" fill="currentColor" />
+      <path d="M17 46 V38 H21 V33 H24 V40 H27 V29 H30 V22.5 H34 V29 H37 V36 H40 V31 H43 V39 H47 V46 Z" fill="currentColor" opacity=".9" />
+      <path d="M14 46 H50" stroke="currentColor" stroke-width="1.5" />
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#stato">Salta al contenuto</a>
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#citta" aria-label="Biagiopoli, torna all'inizio">
+      <svg class="brand-seal" aria-hidden="true"><use href="#seal" /></svg>
+      <span>Biagiopoli</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu">
+      <span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="#palazzi">Palazzi</a>
+      <a href="#governo">Governo</a>
+      <a href="#principi">Principi</a>
+      <a href="#identita">Identità</a>
+      <a href="#dichiarazione">Dichiarazione</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO ------------------------------------------------------------ -->
+    <section class="hero" id="citta" aria-label="Neo-Biagiopoli">
+      <div class="hero-stage" id="hero-stage">
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content wrap">
+        <p class="eyebrow">Stato sovrano tecnologico · Costituzione del 2026</p>
+        <h1 class="hero-title">BIAGIO<span>POLI</span></h1>
+        <blockquote class="hero-quote">
+          «La libertà è il diritto di immaginare il futuro. La tecnologia è il mezzo per costruirlo.»
+        </blockquote>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#palazzi">Esplora i palazzi in 3D</a>
+          <a class="btn btn-ghost" href="#principi">Leggi la Costituzione</a>
+        </div>
+      </div>
+      <div class="hero-meta wrap" aria-hidden="true">
+        <span>Neo-Biagiopoli</span>
+        <span id="hero-count">— edifici in scena</span>
+        <span>Scienza · Libertà · Futuro</span>
+      </div>
+    </section>
+
+    <!-- LO STATO -------------------------------------------------------- -->
+    <section class="section intro wrap" id="stato">
+      <div class="article-tag">Preambolo</div>
+      <div class="intro-grid">
+        <p class="lead">
+          Biagiopoli è uno Stato indipendente fondato sui principi della libertà individuale, dell'innovazione tecnologica,
+          della conoscenza e dell'autodeterminazione.
+        </p>
+        <div class="intro-body">
+          <p>
+            Nato dall'idea che il futuro non debba essere ereditato passivamente, ma progettato da chi ha il coraggio di
+            cambiarlo, Biagiopoli rappresenta l'incontro tra una repubblica digitale, una metropoli cyberpunk e una società
+            in cui la creatività è considerata una risorsa nazionale.
+          </p>
+          <p>
+            La capitale, <strong>Neo-Biagiopoli</strong>, si estende tra grattacieli intelligenti, quartieri digitalizzati,
+            centri di ricerca sull'intelligenza artificiale e distretti artistici dove convivono sviluppatori, ingegneri,
+            designer, ricercatori e visionari. La rete nazionale è un bene pubblico essenziale, il codice aperto è
+            incoraggiato e l'accesso alla conoscenza è uno dei pilastri della cittadinanza.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATLANTE DEI PALAZZI -------------------------------------------- -->
+    <section class="section atlas" id="palazzi">
+      <div class="wrap">
+        <div class="article-tag">Titolo I · Atlante</div>
+        <div class="section-head">
+          <h2>I palazzi di Neo-Biagiopoli</h2>
+          <p>
+            Sette edifici istituzionali, modellati in scala reale: un'unità vale un metro. Ogni palazzo traduce in
+            architettura un'idea che chi scrive codice conosce bene.
+          </p>
+        </div>
+      </div>
+
+      <div class="atlas-grid wrap">
+        <div class="atlas-stage" id="atlas-stage">
+          <canvas id="atlas-canvas" aria-label="Modello 3D del palazzo selezionato"></canvas>
+          <div class="atlas-loading" id="atlas-loading"><span class="spinner"></span>Costruzione dei modelli…</div>
+          <div class="atlas-hud">
+            <span class="hud-hint">Trascina per ruotare · Pizzica per lo zoom</span>
+            <button class="hud-btn" id="atlas-reset" type="button" aria-label="Reimposta la vista">Reimposta vista</button>
+          </div>
+          <div class="wheel-hint" aria-hidden="true">Usa Ctrl + rotella per lo zoom</div>
+        </div>
+
+        <aside class="atlas-panel">
+          <div class="atlas-tabs" id="atlas-tabs" role="tablist" aria-label="Seleziona un palazzo"></div>
+          <article class="atlas-info" id="atlas-info" aria-live="polite"></article>
+        </aside>
+      </div>
+    </section>
+
+    <!-- GOVERNO --------------------------------------------------------- -->
+    <section class="section wrap" id="governo">
+      <div class="article-tag">Titolo II · Il governo della Repubblica</div>
+      <div class="gov-grid">
+        <article class="gov-card">
+          <div class="gov-emblem" aria-hidden="true"><svg><use href="#seal" /></svg></div>
+          <p class="gov-role">Presidente della Repubblica e fondatore</p>
+          <h3>Biagio I Scaglia</h3>
+          <p>
+            Architetto dello Stato e principale promotore della sua indipendenza. Biagio guida la strategia nazionale,
+            supervisiona lo sviluppo tecnologico e difende il principio secondo cui nessun sistema, per quanto avanzato,
+            deve diventare più importante delle persone che lo utilizzano.
+          </p>
+          <p>
+            La sua dottrina è semplice: <em>costruire, sperimentare, migliorare</em>. Non accetta la stagnazione e
+            considera ogni problema un sistema ancora da comprendere.
+          </p>
+          <pre class="gov-code" aria-label="La dottrina del Presidente"><code><span class="c-k">while</span> (repubblica.<span class="c-f">esiste</span>()) {
+  <span class="c-f">costruire</span>();
+  <span class="c-f">sperimentare</span>();
+  <span class="c-f">migliorare</span>();
+}</code></pre>
+          <p class="gov-seat">Sede: <a href="#palazzi" data-building="torre">Torre Scaglia</a></p>
+        </article>
+
+        <article class="gov-card gov-card--goku">
+          <div class="gov-emblem gov-emblem--orb" aria-hidden="true"><span></span></div>
+          <p class="gov-role">Primo Ministro e Ministro della Difesa Nazionale</p>
+          <h3>Son Goku</h3>
+          <p>
+            Nominato direttamente dal Presidente, Goku è una scelta politica decisamente fuori dagli schemi. Non è un
+            burocrate, non ama le riunioni interminabili e probabilmente dimenticherebbe metà degli appuntamenti se gli
+            promettessero un pranzo abbondante.
+          </p>
+          <p>
+            Eppure nessuno mette in discussione la sua nomina. Goku incarna la difesa della popolazione, il coraggio davanti
+            alle minacce e la convinzione che la vera forza serva a proteggere, non a dominare. La sua unica richiesta al
+            governo è che la mensa del Parlamento sia sempre aperta.
+          </p>
+          <p class="gov-seat">Sede: <a href="#palazzi" data-building="dojo">Dojo della Difesa Nazionale</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRINCIPI -------------------------------------------------------- -->
+    <section class="section wrap" id="principi">
+      <div class="article-tag">Titolo III · I principi fondamentali</div>
+      <ol class="principles">
+        <li>
+          <span class="num">I</span>
+          <h3>Sovranità tecnologica</h3>
+          <p>Biagiopoli sviluppa infrastrutture digitali indipendenti, promuove il software libero e investe nella ricerca, nell'intelligenza artificiale e nella sicurezza informatica.</p>
+        </li>
+        <li>
+          <span class="num">II</span>
+          <h3>Libertà individuale</h3>
+          <p>Ogni cittadino ha diritto alla privacy, all'espressione personale, alla conoscenza e alla possibilità di costruire il proprio percorso senza essere definito esclusivamente dal proprio ruolo sociale.</p>
+        </li>
+        <li>
+          <span class="num">III</span>
+          <h3>Il sapere come infrastruttura</h3>
+          <p>L'istruzione tecnologica, la creatività e la ricerca sono investimenti strategici. Nessuna innovazione è un successo se rende la società meno libera o meno accessibile.</p>
+        </li>
+        <li>
+          <span class="num">IV</span>
+          <h3>Forza al servizio della pace</h3>
+          <p>Le capacità difensive dello Stato sono finalizzate alla protezione della popolazione e dell'indipendenza nazionale. Goku ha pieni poteri operativi in caso di emergenza, ma resta soggetto alla Costituzione.</p>
+        </li>
+        <li>
+          <span class="num">V</span>
+          <h3>Il diritto di reinventarsi</h3>
+          <p>Il passato non costituisce una condanna e il fallimento non è una colpa permanente. Ogni cittadino può cambiare strada, apprendere nuove competenze e contribuire alla società in modi differenti.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- IDENTITÀ -------------------------------------------------------- -->
+    <section class="section wrap" id="identita">
+      <div class="article-tag">Titolo IV · Identità nazionale</div>
+      <div class="identity-grid">
+        <dl class="facts">
+          <div><dt>Capitale</dt><dd>Neo-Biagiopoli</dd></div>
+          <div><dt>Forma di governo</dt><dd>Repubblica tecnologica</dd></div>
+          <div><dt>Capo dello Stato</dt><dd>Biagio I Scaglia</dd></div>
+          <div><dt>Capo del governo</dt><dd>Son Goku</dd></div>
+          <div><dt>Valuta</dt><dd>Byte sovrano <span class="mono">(BYS)</span></dd></div>
+          <div><dt>Lingua ufficiale</dt><dd>Italiano</dd></div>
+          <div class="wide"><dt>Motto nazionale</dt><dd>Scienza · Libertà · Futuro</dd></div>
+        </dl>
+
+        <figure class="flag-figure">
+          <svg class="flag" viewBox="0 0 300 200" role="img" aria-label="Bandiera di Biagiopoli: blu elettrico, nero e argento con il sigillo al centro">
+            <defs>
+              <linearGradient id="silver" x1="0" x2="1">
+                <stop offset="0" stop-color="#8d97a8" /><stop offset=".5" stop-color="#e3e8ef" /><stop offset="1" stop-color="#8d97a8" />
+              </linearGradient>
+            </defs>
+            <rect width="300" height="200" fill="#07090f" />
+            <rect width="300" height="46" fill="#2d7dff" />
+            <rect y="170" width="300" height="30" fill="url(#silver)" />
+            <circle cx="150" cy="108" r="44" fill="#07090f" stroke="#2d7dff" stroke-width="2" />
+            <use href="#seal" x="112" y="70" width="76" height="76" color="#dfe5ee" />
+          </svg>
+          <figcaption>
+            Il <strong>blu elettrico</strong> simboleggia la conoscenza e l'innovazione, il <strong>nero</strong> la
+            profondità dell'universo digitale e l'<strong>argento</strong> la razionalità e la ricerca della verità. Il
+            sigillo centrale, con la città circondata da una corona, esprime l'unità tra progresso, indipendenza e
+            responsabilità collettiva.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- NEL MONDO ------------------------------------------------------- -->
+    <section class="section wrap" id="mondo">
+      <div class="article-tag">Titolo V · Il posto di Biagiopoli nel mondo</div>
+      <div class="world-grid">
+        <div class="world-text">
+          <p class="lead">Biagiopoli non aspira a conquistare territori né a imporre il proprio modello agli altri Stati.</p>
+          <p>
+            La sua ambizione è diventare un polo internazionale per lo sviluppo software, la cybersecurity, l'intelligenza
+            artificiale e le arti digitali. La diplomazia è affidata a professionisti capaci di negoziare con lucidità; la
+            sicurezza nazionale a una struttura tecnologicamente avanzata; la cultura a una rete di laboratori, studi creativi
+            e comunità indipendenti.
+          </p>
+        </div>
+
+        <div class="incident" aria-label="Protocollo in caso di invasione">
+          <div class="incident-head">
+            <span class="dot"></span>
+            <span>protocollo_invasione.log</span>
+          </div>
+          <ol class="incident-log">
+            <li><time>00:00</time> Il Consiglio di Sicurezza si riunisce.</li>
+            <li><time>00:04</time> Il Presidente valuta le opzioni.</li>
+            <li><time>00:09</time> Gli analisti simulano migliaia di scenari.</li>
+            <li class="hl"><time>00:11</time> Entra Goku dalla porta principale.</li>
+            <li class="quote">«Quindi ci sono dei tizi forti dall'altra parte? Figo. Dove sono?»</li>
+            <li><time>00:12</time> Il Consiglio sospende la seduta.</li>
+            <li class="ok"><time>00:12</time> La minaccia viene rivalutata.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- DICHIARAZIONE --------------------------------------------------- -->
+    <section class="section declaration" id="dichiarazione">
+      <div class="wrap narrow">
+        <div class="article-tag">Dichiarazione fondativa</div>
+        <p>
+          Biagiopoli nasce dalla convinzione che il futuro non sia una destinazione assegnata, ma un'opera collettiva.
+          Nessuna tecnologia può sostituire la volontà umana, nessun potere può giustificare la rinuncia alla libertà e
+          nessun fallimento può cancellare il diritto di ricominciare.
+        </p>
+        <p class="big">Qui il codice diventa architettura, l'immaginazione diventa progetto e il progetto diventa realtà.</p>
+        <p>
+          Biagiopoli non promette un mondo perfetto. Promette uno Stato che non smette mai di provare a costruirne uno
+          migliore.
+        </p>
+        <p class="sign">Scienza. Libertà. Futuro.<br /><strong>Biagiopoli, sempre.</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <svg class="footer-seal" aria-hidden="true"><use href="#seal" /></svg>
+    <p>Repubblica di Biagiopoli · Un progetto di <strong>Biagio Scaglia</strong>, developer.</p>
+    <p class="mono small">Modelli 3D procedurali generati in WebGL · nessun asset esterno</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

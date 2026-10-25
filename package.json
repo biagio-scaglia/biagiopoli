@@ -1,0 +1,20 @@
+{
+  "name": "biagiopoli",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Biagiopoli — Stato sovrano tecnologico. Sito con i palazzi di Neo-Biagiopoli in 3D.",
+  "author": "Biagio Scaglia",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check:models": "node scripts/check-models.js"
+  },
+  "dependencies": {
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "vite": "^8.3.5"
+  }
+}
