@@ -566,7 +566,7 @@ function buildFaro() {
         vAlong = uv.y;
         vec4 mv = modelViewMatrix * vec4(position, 1.0);
         vec3 n = normalize(normalMatrix * normal);
-        vFacing = abs(dot(n, normalize(-mv.xyz)));
+        vFacing = abs(dot(n, normalize(-mv.xyz + vec3(1e-4))));
         gl_Position = projectionMatrix * mv;
       }
     `,
@@ -575,7 +575,10 @@ function buildFaro() {
       varying float vAlong;
       varying float vFacing;
       void main() {
-        float a = pow(vAlong, 2.2) * 0.22 * smoothstep(0.0, 0.6, vFacing);
+        // Con MSAA i varying possono uscire di poco da [0,1]: pow() di un
+        // negativo dà NaN su Direct3D e il bloom lo propaga a tutto lo schermo.
+        float along = clamp(vAlong, 0.0, 1.0);
+        float a = along * along * 0.22 * smoothstep(0.0, 0.6, clamp(vFacing, 0.0, 1.0));
         gl_FragColor = vec4(uColor * a, a);
       }
     `,
