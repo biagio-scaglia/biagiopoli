@@ -1,6 +1,7 @@
 import './style.css';
 import { initAtlas } from './atlas.js';
 import { initVisa } from './visa.js';
+import { initSecret } from './secret.js';
 
 /* Barra superiore e menu mobile */
 const topbar = document.getElementById('topbar');
@@ -59,6 +60,9 @@ initAtlas();
 
 /* Ufficio Visti */
 initVisa();
+
+/* Area riservata */
+initSecret();
 
 /* Città 3D nell'hero, avviata dopo il primo paint */
 const heroStage = document.getElementById('hero-stage');

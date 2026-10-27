@@ -408,6 +408,37 @@
         </div>
       </div>
     </section>
+
+    <!-- AREA RISERVATA -------------------------------------------------- -->
+    <section class="section secret" id="secret" aria-labelledby="secret-title">
+      <div class="wrap">
+        <div class="secret-gate" id="secret-gate">
+          <div class="article-tag">Ministero della Difesa · Livello Omega</div>
+          <h2 id="secret-title">Area riservata</h2>
+          <p>Accesso consentito solo al personale autorizzato dal Presidente e dal Primo Ministro.</p>
+          <button type="button" class="secret-btn" id="secret-open" aria-haspopup="dialog">
+            <span class="secret-btn-lock" aria-hidden="true"></span>Secret
+          </button>
+        </div>
+        <div class="armory" id="armory" hidden></div>
+      </div>
+    </section>
+
+    <dialog class="secret-modal" id="secret-modal" aria-labelledby="secret-modal-title">
+      <form method="dialog" class="secret-form" id="secret-form" novalidate>
+        <p class="secret-modal-kicker">Autenticazione richiesta</p>
+        <h3 id="secret-modal-title">Inserisci la parola d'ordine</h3>
+        <label class="field">
+          <span>Password</span>
+          <input type="password" name="password" id="secret-password" autocomplete="off" required />
+        </label>
+        <p class="secret-error" id="secret-error" role="alert"></p>
+        <div class="secret-actions">
+          <button type="button" class="btn btn-ghost" id="secret-cancel">Annulla</button>
+          <button type="submit" class="btn btn-primary" value="ok">Accedi</button>
+        </div>
+      </form>
+    </dialog>
   </main>
 
   <footer class="footer wrap">
