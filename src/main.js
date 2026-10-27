@@ -1,5 +1,6 @@
 import './style.css';
 import { initAtlas } from './atlas.js';
+import { initVisa } from './visa.js';
 
 /* Barra superiore e menu mobile */
 const topbar = document.getElementById('topbar');
@@ -36,7 +37,7 @@ links.forEach((_, id) => {
 });
 
 /* Comparsa progressiva dei contenuti */
-document.querySelectorAll('.section .article-tag, .lead, .intro-body, .section-head, .gov-card, .principles li, .facts, .flag-figure, .world-text, .declaration p').forEach((el) =>
+document.querySelectorAll('.section .article-tag, .lead, .intro-body, .section-head, .gov-card, .principles li, .facts, .flag-figure, .world-text, .declaration p, .visa-grid').forEach((el) =>
   el.classList.add('reveal'),
 );
 document.querySelectorAll('.incident-log li').forEach((li, i) => li.style.setProperty('transition-delay', `${i * 0.45}s`));
@@ -55,6 +56,9 @@ document.querySelectorAll('.reveal, .incident').forEach((el) => reveal.observe(e
 
 /* Atlante dei palazzi (3D caricato su richiesta) */
 initAtlas();
+
+/* Ufficio Visti */
+initVisa();
 
 /* Città 3D nell'hero, avviata dopo il primo paint */
 const heroStage = document.getElementById('hero-stage');

@@ -42,6 +42,7 @@
       <a href="#principi">Principi</a>
       <a href="#identita">Identità</a>
       <a href="#dichiarazione">Dichiarazione</a>
+      <a href="#visti">Visti</a>
     </nav>
   </header>
 
@@ -285,6 +286,126 @@
           migliore.
         </p>
         <p class="sign">Scienza. Libertà. Futuro.<br /><strong>Biagiopoli, sempre.</strong></p>
+      </div>
+    </section>
+
+    <!-- VISTI ----------------------------------------------------------- -->
+    <section class="section visa" id="visti">
+      <div class="wrap">
+        <div class="article-tag">Ufficio Visti · Richiesta d'ingresso</div>
+        <div class="section-head">
+          <h2>Il tuo visto per Biagiopoli</h2>
+          <p>
+            Compila la domanda, scarica il visto come immagine e invialo al Presidente per l'approvazione. I dati restano
+            solo su questo dispositivo: nessun server, nessun invio automatico.
+          </p>
+        </div>
+
+        <div class="visa-grid">
+          <form class="visa-form" id="visa-form" novalidate autocomplete="off">
+            <fieldset>
+              <legend>Dati del richiedente</legend>
+              <div class="field-row">
+                <label class="field"><span>Nome *</span><input name="nome" required maxlength="28" autocomplete="given-name" /></label>
+                <label class="field"><span>Cognome *</span><input name="cognome" required maxlength="28" autocomplete="family-name" /></label>
+              </div>
+              <div class="field-row">
+                <label class="field"><span>Data di nascita *</span><input name="nascita" type="date" required /></label>
+                <label class="field"><span>Nazionalità *</span><input name="nazionalita" required maxlength="24" placeholder="Italiana" /></label>
+              </div>
+              <div class="field-row">
+                <label class="field">
+                  <span>Professione</span>
+                  <select name="professione">
+                    <option>Sviluppo software</option>
+                    <option>Design</option>
+                    <option>Ricerca</option>
+                    <option>Cybersecurity</option>
+                    <option>Intelligenza artificiale</option>
+                    <option>Arti digitali</option>
+                    <option>Studio</option>
+                    <option>Altro</option>
+                  </select>
+                </label>
+                <label class="field"><span>Contatto (email o GitHub)</span><input name="contatto" maxlength="36" placeholder="@username" /></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Tipo di visto *</legend>
+              <div class="visa-types" role="radiogroup">
+                <label><input type="radio" name="tipo" value="Turismo" required /><span><strong>Turismo</strong><small>Visita della capitale</small></span></label>
+                <label><input type="radio" name="tipo" value="Lavoro" /><span><strong>Lavoro</strong><small>Sviluppo e ricerca</small></span></label>
+                <label><input type="radio" name="tipo" value="Residenza" /><span><strong>Residenza</strong><small>Cittadinanza futura</small></span></label>
+                <label><input type="radio" name="tipo" value="Ricerca" /><span><strong>Ricerca</strong><small>Istituto IA e laboratori</small></span></label>
+                <label><input type="radio" name="tipo" value="Diplomatico" /><span><strong>Diplomatico</strong><small>Missione ufficiale</small></span></label>
+                <label><input type="radio" name="tipo" value="Addestramento" /><span><strong>Addestramento</strong><small>Al Dojo con Goku</small></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Soggiorno</legend>
+              <div class="field-row">
+                <label class="field"><span>Data di ingresso *</span><input name="arrivo" type="date" required /></label>
+                <label class="field">
+                  <span>Durata</span>
+                  <select name="durata">
+                    <option value="7">7 giorni</option>
+                    <option value="30" selected>30 giorni</option>
+                    <option value="90">90 giorni</option>
+                    <option value="365">1 anno</option>
+                    <option value="0">Permanente</option>
+                  </select>
+                </label>
+              </div>
+              <label class="field"><span>Linguaggio di programmazione preferito</span><input name="linguaggio" maxlength="20" placeholder="TypeScript" /></label>
+              <label class="field">
+                <span>Motivo della visita</span>
+                <textarea name="motivo" rows="2" maxlength="120" placeholder="Voglio costruire qualcosa di nuovo."></textarea>
+                <small class="counter" data-for="motivo">0/120</small>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Foto e firma</legend>
+              <div class="media-row">
+                <div class="photo-field">
+                  <span class="field-label">Foto (facoltativa)</span>
+                  <label class="photo-drop">
+                    <input type="file" name="foto" accept="image/*" />
+                    <span>Carica una foto</span>
+                  </label>
+                  <button type="button" class="link-btn" id="photo-clear" hidden>Rimuovi foto</button>
+                </div>
+                <div class="sign-field">
+                  <span class="field-label">Firma</span>
+                  <canvas class="sign-pad" id="sign-pad" width="600" height="220" aria-label="Riquadro per la firma: disegna con il dito o il mouse"></canvas>
+                  <button type="button" class="link-btn" id="sign-clear">Cancella firma</button>
+                </div>
+              </div>
+            </fieldset>
+
+            <label class="oath">
+              <input type="checkbox" name="giuramento" required />
+              <span>Dichiaro di rispettare la Costituzione di Biagiopoli e di non chiedere mai a Goku di saltare il pranzo. *</span>
+            </label>
+          </form>
+
+          <div class="visa-preview">
+            <canvas id="visa-canvas" width="1600" height="1000" role="img" aria-label="Anteprima del visto"></canvas>
+            <p class="visa-status" id="visa-status" aria-live="polite"></p>
+            <div class="visa-actions">
+              <button type="button" class="btn btn-primary" data-export="png">Scarica PNG</button>
+              <button type="button" class="btn btn-ghost" data-export="jpg">Scarica JPG</button>
+              <button type="button" class="link-btn" id="visa-reset">Nuova domanda</button>
+            </div>
+            <ol class="visa-steps">
+              <li>Compila la domanda: viene salvata automaticamente su questo dispositivo.</li>
+              <li>Scarica il visto in PNG o JPG.</li>
+              <li>Invia l'immagine al Presidente: il visto è valido solo dopo la sua approvazione.</li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
   </main>
